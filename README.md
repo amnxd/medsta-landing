@@ -3,135 +3,89 @@
 A modern healthcare platform for Tier 2 and Tier 3 Indian cities. Built with Next.js 15, React 19, Tailwind CSS, and ShadCN UI.
 
 ## Features
+# Medsta — Local Healthcare Platform
 
-### Landing Page
+Medsta is a lightweight landing site and provider dashboard scaffold for local healthcare services. It demonstrates a modern Next.js App Router setup with a responsive landing page and a provider-facing dashboard (profile, services, posts, orders, payments, settings).
 
-- Modern, responsive design
-- Service showcase
-- WhatsApp integration for easy ordering
-- Provider partnership CTA
-- Testimonials section
+## Key Features
 
-### Provider Dashboard
-
-- **Dashboard Home**: Overview with stats, quick actions, and upcoming schedule
-- **My Profile**: Manage public-facing information
-- **My Services**: Add, edit, and toggle services
-- **My Posts**: Create and manage posts visible to patients
-- **Orders/Requests**: WhatsApp-based order management
-- **Payments**: Payment information and methods
-- **Settings**: Notification preferences and account security
-- **Terms & Policies**: Legal documents and agreements
+- Responsive landing page with service showcase and contact CTA
+- WhatsApp-based order flow (link integration for quick requests)
+- Provider Dashboard: overview, profile management, services, posts, orders, payments, settings, and terms
+- Simple component-driven UI (Radix primitives + utility components)
 
 ## Tech Stack
 
-- **Framework**: Next.js 15 (App Router)
-- **UI Library**: React 19
-- **Styling**: Tailwind CSS 3.4
-- **Components**: ShadCN UI (Radix UI primitives)
-- **Icons**: Lucide React
-- **TypeScript**: Full type safety
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS 3
+- Radix UI primitives, Lucide icons
 
-## Getting Started
+## Project Structure (important files)
 
-1. **Install dependencies**:
+- `src/app/` — App router routes and layouts
+  - `src/app/page.tsx` — Landing page
+  - `src/app/policies/page.tsx` — Terms & policies
+  - `src/app/provider/dashboard/layout.tsx` — Dashboard layout
+  - `src/app/provider/dashboard/page.tsx` — Dashboard home
+  - `src/app/provider/dashboard/*` — `profile`, `services`, `posts`, `orders`, `payments`, `settings`, `terms`
+- `src/components/dashboard/` — Dashboard UI pieces (sidebar, header, sections)
+- `src/components/ui/` — Reusable UI primitives (button, input, card, etc.)
+- `src/lib/provider-context.tsx` — Provider mock state and helpers
 
-   ```bash
-   npm install
-   ```
-
-2. **Run the development server**:
-
-   ```bash
-   npm run dev
-   ```
-
-3. **Open in browser**:
-   Navigate to [http://localhost:3000](http://localhost:3000)
-
-## Project Structure
-
-```
-src/
-├── app/
-│   ├── globals.css           # Global styles and CSS variables
-│   ├── layout.tsx            # Root layout
-│   ├── page.tsx              # Landing page
-│   ├── policies/
-│   │   └── page.tsx          # Terms and policies page
-│   └── provider/
-│       └── dashboard/
-│           ├── layout.tsx    # Dashboard layout with sidebar
-│           ├── page.tsx      # Dashboard home
-│           ├── profile/      # Profile management
-│           ├── services/     # Services management
-│           ├── posts/        # Posts management
-│           ├── orders/       # Orders placeholder
-│           ├── payments/     # Payments placeholder
-│           ├── settings/     # Settings page
-│           └── terms/        # Terms & policies
-├── components/
-│   ├── dashboard/            # Dashboard-specific components
-│   │   ├── sidebar.tsx
-│   │   ├── header.tsx
-│   │   ├── welcome-banner.tsx
-│   │   ├── dashboard-home.tsx
-│   │   ├── my-profile.tsx
-│   │   ├── my-posts.tsx
-│   │   ├── my-services.tsx
-│   │   ├── orders.tsx
-│   │   ├── payments.tsx
-│   │   ├── settings.tsx
-│   │   └── terms-policies.tsx
-│   └── ui/                   # ShadCN UI components
-│       ├── avatar.tsx
-│       ├── badge.tsx
-│       ├── button.tsx
-│       ├── card.tsx
-│       ├── dialog.tsx
-│       ├── dropdown-menu.tsx
-│       ├── input.tsx
-│       ├── label.tsx
-│       ├── separator.tsx
-│       ├── switch.tsx
-│       ├── textarea.tsx
-│       └── tooltip.tsx
-└── lib/
-    ├── provider-context.tsx  # Provider state management
-    ├── types.ts              # TypeScript types
-    └── utils.ts              # Utility functions
-```
+See the code for details in the `src` folder.
 
 ## Routes
 
-| Route                          | Description             |
-| ------------------------------ | ----------------------- |
-| `/`                            | Landing page            |
-| `/policies`                    | Terms and policies      |
-| `/provider/dashboard`          | Provider dashboard home |
-| `/provider/dashboard/profile`  | Profile management      |
-| `/provider/dashboard/services` | Services management     |
-| `/provider/dashboard/posts`    | Posts management        |
-| `/provider/dashboard/orders`   | Orders (placeholder)    |
-| `/provider/dashboard/payments` | Payments (placeholder)  |
-| `/provider/dashboard/settings` | Settings                |
-| `/provider/dashboard/terms`    | Terms & policies        |
+- `/` — Landing page
+- `/policies` — Terms & Policies
+- `/provider/dashboard` — Provider dashboard home
+- `/provider/dashboard/profile` — Profile
+- `/provider/dashboard/services` — Services
+- `/provider/dashboard/posts` — Posts
+- `/provider/dashboard/orders` — Orders
+- `/provider/dashboard/payments` — Payments
+- `/provider/dashboard/settings` — Settings
+- `/provider/dashboard/terms` — Terms & Policies
 
-## Adding Firebase (Future)
+## Local Development
 
-The project is structured to easily integrate Firebase:
+1. Install dependencies
 
-1. Install Firebase:
+```bash
+npm install
+```
 
-   ```bash
-   npm install firebase
-   ```
+2. Run development server
 
-2. Create `src/lib/firebase.ts` with your config
+```bash
+npm run dev
+```
 
-3. Replace the mock data in `provider-context.tsx` with Firestore queries
+3. Build for production
 
-4. Add authentication to protect dashboard routes
+```bash
+npm run build
+npm start
+```
+
+4. Lint
+
+```bash
+npm run lint
+```
+
+The app runs on http://localhost:3000 by default.
+
+## Notes & Extensibility
+
+- The dashboard currently uses local mock state (`src/lib/provider-context.tsx`). Replace it with real APIs or Firebase/Firestore for persistence and authentication.
+- WhatsApp order links are implemented as lightweight integrations; adapt them to your backend or messaging workflow as needed.
+
+## Contributing
+
+Contributions are welcome — open issues or PRs with focused changes. Keep formatting consistent with TypeScript and Tailwind conventions.
 
 ## License
 
