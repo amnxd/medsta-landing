@@ -1,8 +1,3 @@
-# Medsta - Healthcare Platform
-
-A modern healthcare platform for Tier 2 and Tier 3 Indian cities. Built with Next.js 15, React 19, Tailwind CSS, and ShadCN UI.
-
-## Features
 # Medsta — Local Healthcare Platform
 
 Medsta is a lightweight landing site and provider dashboard scaffold for local healthcare services. It demonstrates a modern Next.js App Router setup with a responsive landing page and a provider-facing dashboard (profile, services, posts, orders, payments, settings).
