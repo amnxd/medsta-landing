@@ -18,6 +18,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import Image from "next/image";
+import mlogo from "./mlogo.png";
 import whatsappLogo from "@/app/whatsapp.png";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -99,17 +100,16 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <nav className="flex h-16 items-center justify-between">
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold">
-                M
+              <div className="flex h-40 w-40 items-center justify-center rounded-lg overflow-hidden">
+                <Image src={mlogo} alt="Medsta logo" width={160} height={160} />
               </div>
-              <span className="font-bold text-xl text-primary hidden sm:inline">MEDSTA</span>
             </Link>
 
             <div className="hidden md:flex items-center gap-6">
               <Link href="#services" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                 Services
               </Link>
-              <Link href="#about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                 About
               </Link>
               <Link href="#providers" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
@@ -133,7 +133,7 @@ export default function HomePage() {
               </summary>
               <div className="absolute right-0 mt-2 w-56 bg-background border rounded-lg shadow-md py-2 z-50">
                 <Link href="#services" className="block px-4 py-2 text-sm text-muted-foreground hover:bg-muted/20">Services</Link>
-                <Link href="#about" className="block px-4 py-2 text-sm text-muted-foreground hover:bg-muted/20">About</Link>
+                <Link href="/about" className="block px-4 py-2 text-sm text-muted-foreground hover:bg-muted/20">About</Link>
                 <Link href="#providers" className="block px-4 py-2 text-sm text-muted-foreground hover:bg-muted/20">Partner with us</Link>
                 <div className="border-t my-1" />
                 <Link href="/provider/dashboard" className="block px-4 py-2 text-sm font-medium">Log In</Link>
@@ -389,10 +389,9 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
             <div className="col-span-2 md:col-span-1">
               <Link href="/" className="flex items-center gap-2 mb-4">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-primary font-bold">
-                  M
+                <div className="flex h-40 w-40 items-center justify-center rounded-lg overflow-hidden">
+                  <Image src={mlogo} alt="Medsta logo" width={160} height={160} />
                 </div>
-                <span className="font-bold text-xl">MEDSTA</span>
               </Link>
               <p className="text-slate-400 text-sm">
                 Healthcare made simple for Tier 2 and Tier 3 Indian cities.
@@ -421,8 +420,8 @@ export default function HomePage() {
               <h4 className="font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-sm text-slate-400">
                 <li><Link href="#" className="hover:text-white transition-colors">Help Center</Link></li>
-                <li><Link href="/policies" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-                <li><Link href="/policies" className="hover:text-white transition-colors">Terms & Conditions</Link></li>
+                <li><Link href="/policies#privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                <li><Link href="/policies#terms" className="hover:text-white transition-colors">Terms & Conditions</Link></li>
               </ul>
             </div>
           </div>

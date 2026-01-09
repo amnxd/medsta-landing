@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import whatsappLogo from "@/app/whatsapp.png";
+import mlogo from "@/app/mlogo.png";
 import {
   Home,
   User,
@@ -81,17 +81,16 @@ export function DashboardSidebar() {
         )}
       >
         {!collapsed && (
-          <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden">
-              <Image src={whatsappLogo} alt="WhatsApp" width={32} height={32} />
+          <Link href="/" className="flex items-center">
+            <div className="flex h-40 w-40 items-center justify-center rounded-lg overflow-hidden">
+              <Image src={mlogo} alt="Medsta logo" width={160} height={160} />
             </div>
-            <span className="font-bold text-lg text-primary">MEDSTA</span>
           </Link>
         )}
         {collapsed && (
           <Link href="/" className="flex items-center">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden">
-              <Image src={whatsappLogo} alt="WhatsApp" width={24} height={24} />
+              <Image src={mlogo} alt="Medsta logo" width={24} height={24} />
             </div>
           </Link>
         )}

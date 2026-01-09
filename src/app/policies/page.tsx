@@ -1,12 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
+import mlogo from "@/app/mlogo.png";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function PoliciesPage() {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <div className="min-h-screen bg-white">
+      <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
         <div className="container mx-auto px-4">
           <nav className="flex h-16 items-center gap-4">
             <Button variant="ghost" size="icon" asChild>
@@ -15,127 +16,101 @@ export default function PoliciesPage() {
               </Link>
             </Button>
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold">
-                M
-              </div>
-              <span className="font-bold text-xl text-primary">MEDSTA</span>
+              <div className="flex h-40 w-40 items-center justify-center rounded-lg overflow-hidden">
+                  <Image src={mlogo} alt="Medsta logo" width={160} height={160} />
+                </div>
             </Link>
           </nav>
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-12 max-w-4xl">
-        <h1 className="text-3xl font-bold mb-8">Terms & Policies</h1>
+      <main className="container mx-auto px-4 py-12 max-w-5xl">
+        <header className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-[#009cfb] mb-2">🏥 Medsta Legal Policies</h1>
+          <p className="text-sm text-slate-600">Medsta Private Limited — Effective Date: October 2025</p>
+        </header>
 
-        {/* Terms and Conditions */}
-        <section id="terms" className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">General Terms & Conditions</h2>
-          <div className="prose prose-slate max-w-none">
-            <p className="text-muted-foreground mb-4">
-              Last updated: January 1, 2026
-            </p>
-            <p className="mb-4">
-              Welcome to Medsta. These terms and conditions outline the rules and regulations 
-              for the use of Medsta&apos;s platform and services.
-            </p>
-            <h3 className="text-lg font-medium mt-6 mb-3">1. Acceptance of Terms</h3>
-            <p className="text-muted-foreground mb-4">
-              By accessing and using Medsta, you accept and agree to be bound by these terms. 
-              If you disagree with any part of these terms, you may not use our services.
-            </p>
-            <h3 className="text-lg font-medium mt-6 mb-3">2. Use of Services</h3>
-            <p className="text-muted-foreground mb-4">
-              Our platform connects patients with healthcare providers. We facilitate 
-              communication but are not responsible for the medical services provided 
-              by independent healthcare professionals.
-            </p>
-            <h3 className="text-lg font-medium mt-6 mb-3">3. User Responsibilities</h3>
-            <p className="text-muted-foreground mb-4">
-              Users must provide accurate information, respect other users, and use the 
-              platform only for lawful purposes related to healthcare services.
-            </p>
+        <nav className="bg-slate-50 border rounded-lg p-4 mb-8">
+          <ul className="flex flex-wrap gap-3 justify-center text-sm">
+            <li><a href="#terms" className="px-3 py-2 rounded hover:bg-slate-100 text-slate-700">Terms & Conditions</a></li>
+            <li><a href="#privacy" className="px-3 py-2 rounded hover:bg-slate-100 text-slate-700">Privacy Policy</a></li>
+            <li><a href="#payment" className="px-3 py-2 rounded hover:bg-slate-100 text-slate-700">Payments</a></li>
+            <li><a href="#delivery" className="px-3 py-2 rounded hover:bg-slate-100 text-slate-700">Delivery</a></li>
+            <li><a href="#returns" className="px-3 py-2 rounded hover:bg-slate-100 text-slate-700">Returns</a></li>
+            <li><a href="#contact" className="px-3 py-2 rounded hover:bg-slate-100 text-slate-700">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <section id="terms" className="mb-12 scroll-mt-20">
+          <h2 className="text-2xl font-semibold mb-4">1️⃣ Terms & Conditions</h2>
+          <p className="text-slate-700 mb-4">Last updated: October 1, 2025</p>
+          <div className="prose prose-slate max-w-none text-slate-700">
+            <p>Welcome to Medsta. These Terms & Conditions govern your use of our platform and services. By accessing or using Medsta, you agree to these terms.</p>
+            <h3>Eligibility</h3>
+            <p>Users must be at least 18 years old and able to form binding contracts under applicable law.</p>
+            <h3>Platform Use</h3>
+            <p>Medsta connects patients with independent healthcare providers. Medsta does not provide medical advice; providers are responsible for clinical services.</p>
+            <h3>Limitation of Liability</h3>
+            <p>To the fullest extent permitted by law, Medsta is not liable for indirect, incidental, or consequential damages arising from use of the platform.</p>
           </div>
         </section>
 
-        {/* Provider Agreement */}
-        <section id="provider-agreement" className="mb-12 pt-8 border-t">
-          <h2 className="text-2xl font-semibold mb-4">Provider Agreement</h2>
-          <div className="prose prose-slate max-w-none">
-            <p className="text-muted-foreground mb-4">
-              This agreement governs the relationship between Medsta and healthcare providers 
-              using our platform.
-            </p>
-            <h3 className="text-lg font-medium mt-6 mb-3">1. Provider Eligibility</h3>
-            <p className="text-muted-foreground mb-4">
-              All providers must hold valid licenses and certifications as required by 
-              Indian law for their respective healthcare services.
-            </p>
-            <h3 className="text-lg font-medium mt-6 mb-3">2. Service Standards</h3>
-            <p className="text-muted-foreground mb-4">
-              Providers agree to maintain high standards of care, respond promptly to 
-              patient inquiries, and honor their listed services and pricing.
-            </p>
-            <h3 className="text-lg font-medium mt-6 mb-3">3. Payments</h3>
-            <p className="text-muted-foreground mb-4">
-              Payments are handled directly between providers and patients. Medsta does 
-              not charge commission on services but may offer optional premium features.
-            </p>
+        <section id="privacy" className="mb-12 scroll-mt-20">
+          <h2 className="text-2xl font-semibold mb-4">2️⃣ Privacy Policy</h2>
+          <div className="prose prose-slate max-w-none text-slate-700">
+            <p>We collect personal information to provide services, including contact details and health-related information where necessary. We process data lawfully, securely and only for stated purposes.</p>
+            <h3>Information We Collect</h3>
+            <p>Data provided directly (name, email, phone), data from providers, and usage analytics.</p>
+            <h3>How We Use Data</h3>
+            <p>To connect patients with providers, process appointments and payments, and maintain service quality.</p>
+            <h3>Your Rights</h3>
+            <p>You may access, correct, or delete your data. Contact privacy@medsta.in for requests.</p>
           </div>
         </section>
 
-        {/* Privacy Policy */}
-        <section id="privacy" className="mb-12 pt-8 border-t">
-          <h2 className="text-2xl font-semibold mb-4">Privacy Policy</h2>
-          <div className="prose prose-slate max-w-none">
-            <p className="text-muted-foreground mb-4">
-              Your privacy is important to us. This policy explains how we collect, use, 
-              and protect your personal information.
-            </p>
-            <h3 className="text-lg font-medium mt-6 mb-3">1. Information We Collect</h3>
-            <p className="text-muted-foreground mb-4">
-              We collect information you provide directly, such as name, contact details, 
-              and health-related information necessary for service delivery.
-            </p>
-            <h3 className="text-lg font-medium mt-6 mb-3">2. How We Use Information</h3>
-            <p className="text-muted-foreground mb-4">
-              Your information is used to connect you with healthcare providers, improve 
-              our services, and communicate important updates.
-            </p>
-            <h3 className="text-lg font-medium mt-6 mb-3">3. Data Security</h3>
-            <p className="text-muted-foreground mb-4">
-              We implement industry-standard security measures to protect your data from 
-              unauthorized access, alteration, or disclosure.
-            </p>
+        <section id="payment" className="mb-12 scroll-mt-20">
+          <h2 className="text-2xl font-semibold mb-4">3️⃣ Payments</h2>
+          <div className="prose prose-slate max-w-none text-slate-700">
+            <p>Payments for services (consultations, tests, medicines) are processed via our payment partners. By making a payment you authorize the transaction and accept applicable fees.</p>
+            <h3>Refunds</h3>
+            <p>Refunds are handled per the provider's policy and applicable laws. Medsta may facilitate refunds but is not the primary party for refunds unless explicitly stated.</p>
+            <h3>Security</h3>
+            <p>We do not store full payment card details on our servers. Payment processing is handled by PCI-compliant third-party providers.</p>
           </div>
         </section>
 
-        {/* Data Protection */}
-        <section id="data-protection" className="pt-8 border-t">
-          <h2 className="text-2xl font-semibold mb-4">Data Protection</h2>
-          <div className="prose prose-slate max-w-none">
-            <p className="text-muted-foreground mb-4">
-              Medsta is committed to protecting patient and provider data in compliance 
-              with applicable Indian data protection laws.
-            </p>
-            <h3 className="text-lg font-medium mt-6 mb-3">1. Data Storage</h3>
-            <p className="text-muted-foreground mb-4">
-              All data is stored on secure servers with encryption at rest and in transit.
-            </p>
-            <h3 className="text-lg font-medium mt-6 mb-3">2. Your Rights</h3>
-            <p className="text-muted-foreground mb-4">
-              You have the right to access, correct, or delete your personal information. 
-              Contact us at privacy@medsta.in for any data-related requests.
-            </p>
+        <section id="delivery" className="mb-12 scroll-mt-20">
+          <h2 className="text-2xl font-semibold mb-4">4️⃣ Delivery</h2>
+          <div className="prose prose-slate max-w-none text-slate-700">
+            <p>Delivery of medicines and products is managed by logistics partners. Delivery times and charges depend on the provider and location.</p>
+            <h3>Tracking</h3>
+            <p>Where available, tracking information will be provided to the customer after dispatch.</p>
+            <h3>Delays</h3>
+            <p>Medsta is not responsible for delays caused by third-party carriers, natural events, or force majeure.</p>
+          </div>
+        </section>
+
+        <section id="returns" className="mb-12 scroll-mt-20">
+          <h2 className="text-2xl font-semibold mb-4">5️⃣ Returns</h2>
+          <div className="prose prose-slate max-w-none text-slate-700">
+            <p>Returns and cancellations are managed in accordance with the provider's policy and applicable regulations. Certain medical products may not be eligible for return.</p>
+            <h3>Cancellations</h3>
+            <p>Cancellations are subject to provider terms. If eligible for a refund, timelines will depend on payment partner processing times.</p>
+          </div>
+        </section>
+
+        <section id="contact" className="mb-12 scroll-mt-20">
+          <h2 className="text-2xl font-semibold mb-4">6️⃣ Contact Us</h2>
+          <div className="prose prose-slate max-w-none text-slate-700">
+            <p>If you have any questions or concerns, please contact:</p>
+            <p className="mt-2">Medsta Private Limited</p>
+            <p>Barabanki, Uttar Pradesh, India</p>
+            <p>📧 Email: <a href="mailto:medsta.in8@gmail.com" className="text-[#009cfb] hover:underline">medsta.in8@gmail.com</a></p>
+            <p>🌐 Website: <a href="https://www.medsta.in" className="text-[#009cfb] hover:underline">www.medsta.in</a></p>
           </div>
         </section>
 
         <div className="mt-12 pt-8 border-t text-center">
-          <p className="text-muted-foreground mb-4">
-            Questions about our policies? Contact us at{" "}
-            <a href="mailto:legal@medsta.in" className="text-primary hover:underline">
-              legal@medsta.in
-            </a>
-          </p>
           <Button asChild>
             <Link href="/">Back to Home</Link>
           </Button>
