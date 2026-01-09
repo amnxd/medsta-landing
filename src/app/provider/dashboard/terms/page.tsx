@@ -1,5 +1,5 @@
-import { TermsPolicies } from "@/components/dashboard/terms-policies";
+import { redirect } from "next/navigation";
 
 export default function TermsPage() {
-  return <TermsPolicies />;
+  redirect("/");
 }

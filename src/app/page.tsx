@@ -118,12 +118,7 @@ export default function HomePage() {
             </div>
 
             <div className="flex items-center gap-3">
-              <Button variant="ghost" asChild className="hidden sm:inline-flex">
-                <Link href="/provider/dashboard">Log In</Link>
-              </Button>
-              <Button asChild>
-                <Link href="/provider/dashboard">Sign Up</Link>
-              </Button>
+              {/* Login/Signup removed per request */}
             </div>
 
             {/* Mobile menu (no JS) */}
@@ -136,8 +131,6 @@ export default function HomePage() {
                 <Link href="/about" className="block px-4 py-2 text-sm text-muted-foreground hover:bg-muted/20">About</Link>
                 <Link href="#providers" className="block px-4 py-2 text-sm text-muted-foreground hover:bg-muted/20">Partner with us</Link>
                 <div className="border-t my-1" />
-                <Link href="/provider/dashboard" className="block px-4 py-2 text-sm font-medium">Log In</Link>
-                <Link href="/provider/dashboard" className="block px-4 py-2 text-sm font-semibold">Sign Up</Link>
               </div>
             </details>
           </nav>

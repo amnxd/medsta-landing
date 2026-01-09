@@ -1,5 +1,5 @@
-import { Payments } from "@/components/dashboard/payments";
+import { redirect } from "next/navigation";
 
 export default function PaymentsPage() {
-  return <Payments />;
+  redirect("/");
 }
