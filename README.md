@@ -1,87 +1,68 @@
-# Medsta — Local Healthcare Platform
+ # Medsta — Landing Site
 
-Medsta is a lightweight landing site and provider dashboard scaffold for local healthcare services. It demonstrates a modern Next.js App Router setup with a responsive landing page and a provider-facing dashboard (profile, services, posts, orders, payments, settings).
+ Medsta is a small Next.js landing site that showcases local healthcare services, WhatsApp-based ordering, and a provider-facing admin area scaffold. This repository focuses on UI, routing, and quick integrations — it is a starting point for a production app.
 
-## Key Features
+ ## Tech Stack
 
-- Responsive landing page with service showcase and contact CTA
-- WhatsApp-based order flow (link integration for quick requests)
-- Provider Dashboard: overview, profile management, services, posts, orders, payments, settings, and terms
-- Simple component-driven UI (Radix primitives + utility components)
+ - Next.js (App Router)
+ - React + TypeScript
+ - Tailwind CSS
+ - lucide-react for icons
 
-## Tech Stack
+ ## Quick Start
 
-- Next.js 16 (App Router)
-- React 19
-- TypeScript
-- Tailwind CSS 3
-- Radix UI primitives, Lucide icons
+ 1. Install dependencies
 
-## Project Structure (important files)
+ ```bash
+ npm install
+ ```
 
-- `src/app/` — App router routes and layouts
-  - `src/app/page.tsx` — Landing page
-  - `src/app/policies/page.tsx` — Terms & policies
-  - `src/app/provider/dashboard/layout.tsx` — Dashboard layout
-  - `src/app/provider/dashboard/page.tsx` — Dashboard home
-  - `src/app/provider/dashboard/*` — `profile`, `services`, `posts`, `orders`, `payments`, `settings`, `terms`
-- `src/components/dashboard/` — Dashboard UI pieces (sidebar, header, sections)
-- `src/components/ui/` — Reusable UI primitives (button, input, card, etc.)
-- `src/lib/provider-context.tsx` — Provider mock state and helpers
+ 2. Run development server
 
-See the code for details in the `src` folder.
+ ```bash
+ npm run dev
+ ```
 
-## Routes
+ 3. Build for production
 
-- `/` — Landing page
-- `/policies` — Terms & Policies
-- `/provider/dashboard` — Provider dashboard home
-- `/provider/dashboard/profile` — Profile
-- `/provider/dashboard/services` — Services
-- `/provider/dashboard/posts` — Posts
-- `/provider/dashboard/orders` — Orders
-- `/provider/dashboard/payments` — Payments
-- `/provider/dashboard/settings` — Settings
-- `/provider/dashboard/terms` — Terms & Policies
+ ```bash
+ npm run build
+ npm start
+ ```
 
-## Local Development
+ Default dev server: http://localhost:3000
 
-1. Install dependencies
+ ## Useful Scripts
 
-```bash
-npm install
-```
+ - `npm run dev` — Start dev server
+ - `npm run build` — Create production build
+ - `npm start` — Run production build
+ - `npm run lint` — Run linter (if configured)
 
-2. Run development server
+ ## Project Layout (high level)
 
-```bash
-npm run dev
-```
+ - `src/app/` — App Router routes and layouts
+   - `src/app/page.tsx` — Landing page (hero, services, features)
+   - `src/app/about/page.tsx` — About page
+   - `src/app/policies/page.tsx` — Single-page legal policies with anchors
+   - `src/app/mlogo.png` — Brand logo used across the site
+ - `src/components/ui/` — Reusable UI primitives (button, card, input, etc.)
+ - `src/components/dashboard/` — (optional) dashboard UI pieces
+ - `src/lib/` — small helpers and provider-context
 
-3. Build for production
+ ## Notes
 
-```bash
-npm run build
-npm start
-```
+ - The landing page includes WhatsApp order links for a lightweight ordering flow.
+ - `src/app/policies/page.tsx` provides anchored sections for Terms, Privacy, Payments, Delivery, Returns, and Contact.
+ - Several provider/dashboard files have been cleaned or stubbed — search `src/app/provider` and `src/components/dashboard` to review or remove unused stubs.
 
-4. Lint
+ ## Contributing
 
-```bash
-npm run lint
-```
+ Feel free to open issues or PRs. Keep changes focused and follow existing code style.
 
-The app runs on http://localhost:3000 by default.
+ ## Contact
 
-## Notes & Extensibility
+ For questions or quick feedback, use the project issue tracker or contact the maintainer listed in the repo.
 
-- The dashboard currently uses local mock state (`src/lib/provider-context.tsx`). Replace it with real APIs or Firebase/Firestore for persistence and authentication.
-- WhatsApp order links are implemented as lightweight integrations; adapt them to your backend or messaging workflow as needed.
-
-## Contributing
-
-Contributions are welcome — open issues or PRs with focused changes. Keep formatting consistent with TypeScript and Tailwind conventions.
-
-## License
-
-Copyright © 2026 Medsta. All rights reserved.
+ ---
+ _This README was updated to reflect current project structure and quick setup steps._

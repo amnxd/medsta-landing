@@ -119,20 +119,20 @@ export default function HomePage() {
 
             <div className="flex items-center gap-3">
               {/* Login/Signup removed per request */}
-            </div>
 
-            {/* Mobile menu (no JS) */}
-            <details className="md:hidden relative">
-              <summary className="list-none cursor-pointer flex items-center gap-2 p-2">
-                <svg className="h-5 w-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-              </summary>
-              <div className="absolute right-0 mt-2 w-56 bg-background border rounded-lg shadow-md py-2 z-50">
-                <Link href="#services" className="block px-4 py-2 text-sm text-muted-foreground hover:bg-muted/20">Services</Link>
-                <Link href="/about" className="block px-4 py-2 text-sm text-muted-foreground hover:bg-muted/20">About</Link>
-                <Link href="#providers" className="block px-4 py-2 text-sm text-muted-foreground hover:bg-muted/20">Partner with us</Link>
-                <div className="border-t my-1" />
-              </div>
-            </details>
+              {/* Mobile menu (no JS) - kept inside right container so the middle links stay centered */}
+              <details className="md:hidden relative">
+                <summary className="list-none cursor-pointer flex items-center gap-2 p-2">
+                  <svg className="h-5 w-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </summary>
+                <div className="absolute right-0 mt-2 w-56 bg-background border rounded-lg shadow-md py-2 z-50">
+                  <Link href="#services" className="block px-4 py-2 text-sm text-muted-foreground hover:bg-muted/20">Services</Link>
+                  <Link href="/about" className="block px-4 py-2 text-sm text-muted-foreground hover:bg-muted/20">About</Link>
+                  <Link href="#providers" className="block px-4 py-2 text-sm text-muted-foreground hover:bg-muted/20">Partner with us</Link>
+                  <div className="border-t my-1" />
+                </div>
+              </details>
+            </div>
           </nav>
         </div>
       </header>
@@ -340,12 +340,6 @@ export default function HomePage() {
                   No commission, no hidden fees. Just grow your practice.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Button size="lg" variant="secondary" className="gap-2" asChild>
-                    <Link href="/provider/dashboard">
-                      <Users className="h-5 w-5" />
-                      Join as Provider
-                    </Link>
-                  </Button>
                   <Button size="lg" variant="outline" className="gap-2 bg-transparent border-white/30 text-white hover:bg-white/10 hover:text-white" asChild>
                     <a href="https://api.whatsapp.com/send/?phone=918354070437&text=Hi+MedSta%2C+I+want+to+order+medicines+%2F+book+a+service.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
                       Learn More

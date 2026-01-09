@@ -17,7 +17,7 @@ export default function AboutPage() {
     <main className="bg-gray-50 min-h-screen">
       <div className="max-w-6xl mx-auto px-6 py-12 sm:py-20">
         <div className="text-center">
-          <p className="text-sm text-blue-600 uppercase font-semibold tracking-wider">
+          <p className="text-xl sm:text-2xl text-blue-500 uppercase font-bold tracking-wider">
             WELCOME TO MEDSTA
           </p>
           <h1 className="mt-4 text-3xl sm:text-5xl font-extrabold text-gray-900">
