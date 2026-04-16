@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import StickyMobileBar from "@/components/StickyMobileBar";
+import ClientLayoutWrapper from "@/components/ClientLayoutWrapper";
 
 export const metadata: Metadata = {
   title: "Medsta | Top Online Healthcare Services in Lucknow",
@@ -82,12 +80,9 @@ export default function RootLayout({
       </head>
       {/* Added pb-16 to body to prevent content hiding behind StickyMobileBar on small screens */}
       <body className="font-sans antialiased min-h-screen flex flex-col pb-16 md:pb-0 overflow-x-hidden">
-        <Navbar />
-        <main className="flex-grow overflow-x-hidden">
+        <ClientLayoutWrapper>
           {children}
-        </main>
-        <Footer />
-        <StickyMobileBar />
+        </ClientLayoutWrapper>
       </body>
     </html>
   );
